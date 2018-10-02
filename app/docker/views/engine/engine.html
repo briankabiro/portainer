@@ -6,7 +6,14 @@
   </rd-header-title>
   <rd-header-content>Docker</rd-header-content>
 </rd-header>
-
+<information-panel title-text="Information" cant-dismiss="true" ng-if="endpointStatus !== 1">
+  <span class="small">
+    <p class="text-muted">
+      <i class="fa fa-exclamation-circle orange-icon" aria-hidden="true" style="margin-right: 2px;"></i>
+        Portainer is connected to a down endpoint. Modifications are disabled and you may have access to limited data.
+    </p>
+  </span>
+</information-panel>
 <div class="row" ng-if="info && version">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <rd-widget>

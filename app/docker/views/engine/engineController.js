@@ -1,8 +1,9 @@
 angular.module('portainer.docker')
-.controller('EngineController', ['$q', '$scope', 'SystemService', 'Notifications',
-function ($q, $scope, SystemService, Notifications) {
+.controller('EngineController', ['$q', '$scope', 'SystemService', 'Notifications', 'StateManager',
+function ($q, $scope, SystemService, Notifications, StateManager) {
 
   function initView() {
+    $scope.endpointStatus = StateManager.getState().endpoint.status;
     $q.all({
       version: SystemService.version(),
       info: SystemService.info()
